@@ -20,13 +20,22 @@ public class JobForm {
     private String name;
 
     @NotNull
-    private int employerId;
+    private int employerID;
 
     /*
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
+    @NotNull
+    private int locationID;
+
+    @NotNull
+    private int skillID;
+
+    @NotNull
+    private int positionTypeID;
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -42,6 +51,9 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
 
     }
 
@@ -53,13 +65,38 @@ public class JobForm {
         this.name = name;
     }
 
-    public int getEmployerId() {
-        return employerId;
+    public int getEmployerID() {
+        return employerID;
     }
 
-    public void setEmployerId(int employerId) {
-        this.employerId = employerId;
+    public void setEmployerID(int employerId) {
+        this.employerID = employerId;
     }
+
+    public int getLocationID(){
+        return locationID;
+    }
+
+    public void setLocationID(int locationId){
+        this.locationID = locationId;
+    }
+
+    public int getSkillID(){
+        return skillID;
+    }
+
+    public void setSkillID(int skillId){
+        this.skillID = skillId;
+    }
+
+    public int getPositionTypeID(){
+        return positionTypeID;
+    }
+
+    public void setPositionTypeID(int positionTypeId){
+        this.positionTypeID = positionTypeId;
+    }
+
 
     public ArrayList<Employer> getEmployers() {
         return employers;

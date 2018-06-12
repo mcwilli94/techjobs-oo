@@ -17,8 +17,8 @@
         </div>
 
         <div class="form-group">
-            <label th:for="employerId">Employer</label>
-            <select th:field="*{employerId}">
+            <label th:for="employerID">Employer</label>
+            <select th:field="*{employerID}">
                 <option th:each="employer : *{employers}"
                         th:value="${employer.id}"
                         th:text="${employer.value}"></option>
@@ -26,6 +26,34 @@
         </div>
 
         <!-- TODO #5 - Create <select> dropdowns for other job fields -->
+        <div class="form-group">
+            <label th:for="locationID">Location</label>
+            <select th:field="*{locationID}">
+                <option th:each="location : *{locations}"
+                        th:value="${location.id}"
+                        th:text="${location.value}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="skillID">Skill</label>
+            <select th:field="*{skillID}">
+                <option th:each="skill : *{coreCompetencies}"
+                        th:value="${skill.id}"
+                        th:text="${skill.value}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="positionTypeID">Position Type</label>
+            <select th:field="*{positionTypeID}">
+                <option th:each="position : *{positionTypes}"
+                        th:value="${position.id}"
+                        th:text="${position.value}"></option>
+            </select>
+        </div>
+
+
 
         <input type="submit" value="Add Job" />
     </form>
